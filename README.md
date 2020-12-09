@@ -7,7 +7,6 @@ Auto Rifles
 
 #### NOTE: STLs did not save in correct orientation, but all parts have an optimal print direction.
 
-## ASSMEBLY
 ### HARDWARE
 #### MECHANICAL
 - Six 5mm x 400mm carbon fiber rods
