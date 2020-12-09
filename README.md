@@ -237,8 +237,6 @@ Have fun with it and personalize your blaster to your tastes!
 
 ## Fusion File Downloads
 
-https://drive.google.com/file/d/14dP4xmUzW5uqN5At8K1t4rPcA42P4aSs/view?usp=sharing 
-
-File was too big to upload, but this is the base frame, i.e. the Shadow Price look alike
+They are massive, like 60MB, so if you want them just shoot me an email.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
