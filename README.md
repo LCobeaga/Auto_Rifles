@@ -5,7 +5,10 @@ Auto Rifles
 
 ###### This is a Re-draw of Shadow Price with significant structural and aesthetic improvements that I made over the summer of 2020. It is now to-scale compared to in Destiny and much easier to edit. I plan to make all the other variants of stocks, barrels, and frames seen in the game. Internally, it is still BLDC flywheels and solenoid pusher, but now uses a 16 bit display ammo counter, and includes select fire. It also uses hardware to hold the blaster toghether, unlike the original which was mostly glued together. As a result, most visual components are separate parts, so even without paint the blaster should look very nice, and allows for color swaps if multiple aesthetic components are printed. 
 
-#### NOTE: STLs did not save in correct orientation, but all parts have an optimal print direction.
+#### NOTES: 
+STLs did not save in correct orientation, but all parts have an obvious optimal print direction. 
+Directories are poorly named, V1 is the version I printed that only works with very thin motors and lacks all optimizations (mostly in wire routing) no reason to print it.
+V2 works for all motors that have a cage designed and includes all optimised wire routings and rigidity changes.
 
 ### HARDWARE
 #### MECHANICAL
@@ -167,40 +170,44 @@ Add the final M3 Heat set insert into the hole marked by a red spiral
 
 ![image](https://user-images.githubusercontent.com/44830532/100841849-bc763180-342c-11eb-9385-3f05aaa74947.png)
 
-26. Once all the electronics are inside, snap the ammo counter cover into the upper by squeezing the sides, placing it into the cavity, teetering it back and snapping the sides out (make sure they snap past these tabs)
+26. Wrap tape around the small length of PVC and push it down the barrel so it is flush with the front of the flywheel cage
+
+![barrel insert](https://user-images.githubusercontent.com/44830532/101695266-285a2a80-3a29-11eb-90c2-b01ce03eadd6.jpg)
+
+27. Once all the electronics are inside, snap the ammo counter cover into the upper by squeezing the sides, placing it into the cavity, teetering it back and snapping the sides out (make sure they snap past these tabs)
 ![image](https://user-images.githubusercontent.com/44830532/100840560-ec243a00-342a-11eb-966a-a8d2a526e5e5.png)
 
-27. Slot ammo counter and picatiny assembly over the electronics and OLED (red arrow), then rotate the oled into the slot on the ammo counter and use the shorter M3 screw to lock it down (blue arrow)
+28. Slot ammo counter and picatiny assembly over the electronics and OLED (red arrow), then rotate the oled into the slot on the ammo counter and use the shorter M3 screw to lock it down (blue arrow)
 
 ![image](https://user-images.githubusercontent.com/44830532/101680433-8ed54d80-3a15-11eb-9743-acfa780f8f3e.png)
 
-28. Snap the frame over the upper, it will lock in at the front, back, and slot over the cut out in the ammo counter
+29. Snap the frame over the upper, it will lock in at the front, back, and slot over the cut out in the ammo counter
 
 ![image](https://user-images.githubusercontent.com/44830532/100842069-21318c00-342d-11eb-90c3-028dc23f57ba.png)
 
-29. Snap in the top cowl and add the last Nerf screw to hold it down
+30. Snap in the top cowl and add the last Nerf screw to hold it down
 
 ![image](https://user-images.githubusercontent.com/44830532/100842180-4b834980-342d-11eb-8852-719566a8b59f.png)
 
-30. Slot on the barrel clip, it will snap in place once in position
+31. Slot on the barrel clip, it will snap in place once in position
 
 ![image](https://user-images.githubusercontent.com/44830532/101683411-c5ad6280-3a19-11eb-94a1-1c267a2cebbd.png)
 
-31. Stack up the three parts of the side panels and push a carbon fiber rod almost all the way through them, but dont go through the rectangular opening at the end
+32. Stack up the three parts of the side panels and push a carbon fiber rod almost all the way through them, but dont go through the rectangular opening at the end
 
 ![image](https://user-images.githubusercontent.com/44830532/101681854-a6add100-3a17-11eb-9c56-9751db52ff0d.png)
 
-32. Push the panel assembly through the barrel clip from the back, and once far enough the opening in the panel will lock over the arc pop-out in the upper and lower
+33. Push the panel assembly through the barrel clip from the back, and once far enough the opening in the panel will lock over the arc pop-out in the upper and lower
 
 ![image](https://user-images.githubusercontent.com/44830532/101683185-79622280-3a19-11eb-95c0-a1edab62b032.png)
 
-33. Slot on the barrel. It will mesh with the top and both panel carbon fiber rods, and sit flush against the barrel filler front surface and lower rod, so they all need to be at the correct length for this step (tip: if you have problems aligning the rods, push them into the barrel FIRST so you just press the assembly into position, slotting all the rods at the same time)
+34. Slot on the barrel. It will mesh with the top and both panel carbon fiber rods, and sit flush against the barrel filler front surface and lower rod, so they all need to be at the correct length for this step (tip: if you have problems aligning the rods, push them into the barrel FIRST so you just press the assembly into position, slotting all the rods at the same time)
 
 ![image](https://user-images.githubusercontent.com/44830532/101684537-6e0ff680-3a1b-11eb-9a80-fd883376526b.png)
 
 ![barrel tips](https://user-images.githubusercontent.com/44830532/101684869-ea0a3e80-3a1b-11eb-8747-06bf60ce9cbd.jpg)
 
-34. Screw on the muzzle, snap in the battery tray and lock it with the second barrel and you are done!
+35. Screw on the muzzle, snap in the battery tray and lock it with the second barrel and you are done!
 
 ![image](https://user-images.githubusercontent.com/44830532/100842856-4e326e80-342e-11eb-9960-e8863c07d1b6.png)
 
