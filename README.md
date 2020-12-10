@@ -31,6 +31,7 @@ V2 works for all motors that have a cage designed and includes all optimised wir
 - Two D2F-01L3 momentary limit switches (I used the rounded lever)
 - One MOSFET or pre-built mosfet board 
 - One 10kΩ resistor (only if using raw MOSFET)
+- One IN5408 diode (only if using raw MOSFET)
 - One 10kΩ potentiometer
 - One 32 x 128 I2C OLED display (https://www.dfrobot.com/product-2019.html this is the only one that I know works, but any with the same shape would work too)
 - One Arduino Pro Mini 
@@ -41,7 +42,7 @@ V2 works for all motors that have a cage designed and includes all optimised wir
 
 ### WIRING DIAGRAM
 
-![Auto Rifle](https://user-images.githubusercontent.com/44830532/100831142-f5f17180-3419-11eb-8df8-56b378fbe148.png)
+![Auto Rifle](https://user-images.githubusercontent.com/44830532/101725540-b48a4300-3a65-11eb-8644-e457702e14b9.png)
 
 ### ASSEMBLY 
 
