@@ -23,7 +23,7 @@ V2 works for all motors that have a cage designed and includes all optimised wir
 - Electrical or Painters tape (to center and hold pipe at base of barrel)
 - ~Four 1kg spools of filament (more if using multiple colors)
 #### ELECTRICAL
-- One 35mm solenoid 
+- One 35mm solenoid (designed for FTW hyperdrive solenoid so a regular one might not fit) https://flywheeltheworld.com/shop/ftw-hyperdrive-solenoid/
 - Two 2300KV brushless motors (currently supports 2204 and 1806)
 - Two ESCs matching motor amperage draw
 - One XT-60 (or preffered) male battery connector
