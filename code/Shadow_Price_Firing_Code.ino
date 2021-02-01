@@ -56,8 +56,8 @@ void setup() {
 
 ////////////////////////////////////////////
 // DO NOT USE WITH BLHELI ESCS. THIS CODE //
-// WILL BURN OUT YOUR MOTORS. BLHELI      //
-// SPECIFIC CODE COMING SOON              //
+// WILL BURN OUT YOUR MOTORS. FOR SIMONK  //
+// ONLY                                   //
 ////////////////////////////////////////////
   //Serial.begin(9600);
   
@@ -103,7 +103,7 @@ void pusher (bool fire) {
 
   while(change<2){            // loop to keep pusher timing
     uint32_t ms = millis();   // timing variable
-    if (ms - ms_last >= 60) { // timing setup
+    if (ms - ms_last >= 85) { // timing setup
       
       ms_last = ms;           // timing exit variable
 
@@ -134,17 +134,17 @@ byte mode() {
 }
 
 void rev(int pwm, int Speed){
-  if (Speed <= STOPPWM){ // check to see if flywheels are still spinning 
-    int Speed = MINPWM; // variable pwm value for ramping speed
+  if (Speed <= STOPPWM){ // if flywheels are not spinning 
+    int Speed = MAXPWM; // variable pwm value for ramping speed
 
     // adaptive delay
-    int rampSize = map(pwm,MINPWM,MAXPWM,0,9);   // using two variables here for optimised speed up 
-    int wait = map(pwm,MINPWM,MAXPWM,4500,3000); // i.e. just changing the indexing is too small a range to work with, using both gives more control
-    while (Speed < pwm){
+    int rampSize = 1; //map(pwm,MINPWM,MAXPWM,10,0);   // using two variables here for optimised speed up 
+    int wait = map(pwm,MINPWM,MAXPWM,150,2000); // i.e. just changing the indexing is too small a range to work with, using both gives more control
+    while (Speed > pwm){
 
       flywheel.writeMicroseconds(Speed); 
       //Serial.println("ramp1");
-      Speed += rampSize;
+      Speed -= rampSize;
       delayMicroseconds(wait);
     }
 
@@ -175,7 +175,7 @@ void rev(int pwm, int Speed){
 }
 
 int decel(int pwm, int Speed){
-  if(Speed>STOPPWM) Speed -= map(pwm,MINPWM,MAXPWM,10,50); // adaptive ramp down
+  if(Speed>STOPPWM) Speed -= map(pwm,MINPWM,MAXPWM,7,50); // adaptive ramp down
   else flywheel.writeMicroseconds(STOPPWM);                // check to make sure flywheels stay off
   flywheel.writeMicroseconds(Speed);                       // set speed to ramp down amount
   //Serial.println("ramp4");
