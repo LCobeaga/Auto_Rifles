@@ -26,8 +26,10 @@
 #define MAXPWM 2000  // motor max PWM 
 #define MINPWM 1050  // motor min PWM
 #define STOPPWM 1000 // motor stopped PWM
+#define INERTIA 4    // time from zero signal to actual motor stop (3 decimal fidelity)
 
 uint32_t ms_last = 0;       // pusher timing
+uint32_t cooldown_time = 0; // zero signal motor spindown timing
 unsigned int pwm;           // PWM signal for motors
 int currSpeed = STOPPWM;    // saved variable for current speed
 int mosfetState = HIGH;     // state memory of solenoid
@@ -69,7 +71,7 @@ void loop() {
   if(trigger.wasPressed()) {            // self explanatory
     pwm = map(potVal,0,1023,1300,1800); // maps potentiometer to the PWM value to send to the motors
     fire = true;                        // input to pusher 
-    rev(pwm,currSpeed);                 // input to flywheels
+    rev(pwm,currSpeed,cooldown_time);                 // input to flywheels
     currSpeed = pwm;                    // saving pwm for use in decelerating
     
     if(currentMode == 0){               // check for full auto
@@ -88,8 +90,9 @@ void loop() {
     }
   }
   else {
+    if(currSpeed>STOPPWM) cooldown_time = millis();
     fire = false;                         // input to pusher
-    currSpeed = decel(pwm, currSpeed);    // controlled decelleration of motors based on target speed
+    currSpeed = decel(pwm, currSpeed, cooldown_time);    // controlled decelleration of motors based on target speed
     pusher(fire);                         // keeps pusher off
   }
 
@@ -133,8 +136,9 @@ byte mode() {
   return currentMode; // pushes burst value out of function
 }
 
-void rev(int pwm, int Speed){
-  if (Speed <= STOPPWM){ // if flywheels are not spinning 
+void rev(int pwm, int Speed, uint32_t cooldown_time){
+  uint32_t ms = millis();
+  if (Speed <= STOPPWM && (ms - cooldown_time) > INERTIA*1000){ // if flywheels are not spinning 
     int Speed = MAXPWM; // variable pwm value for ramping speed
 
     // adaptive delay
@@ -154,7 +158,9 @@ void rev(int pwm, int Speed){
   
   else { // if flywheels still moving 
     int rampSize = map(pwm,MINPWM,MAXPWM,1,10);
-    
+    int offSpeedDelay = map(pwm,MINPWM,MAXPWM,380,80);
+
+    int saveSpeed = Speed;
     // if below desired speed ramp up
     while (Speed < pwm){ 
       flywheel.writeMicroseconds(currSpeed); 
@@ -171,11 +177,12 @@ void rev(int pwm, int Speed){
     }
 
     flywheel.writeMicroseconds(pwm); // hold speed
+    if (saveSpeed <= STOPPWM) delay(offSpeedDelay);
   }
 }
 
-int decel(int pwm, int Speed){
-  if(Speed>STOPPWM) Speed -= map(pwm,MINPWM,MAXPWM,7,50); // adaptive ramp down
+int decel(int pwm, int Speed, uint32_t cooldown_time){
+  if(Speed>STOPPWM) Speed -= map(pwm,MINPWM,MAXPWM,7,50);  // adaptive ramp down
   else flywheel.writeMicroseconds(STOPPWM);                // check to make sure flywheels stay off
   flywheel.writeMicroseconds(Speed);                       // set speed to ramp down amount
   //Serial.println("ramp4");
