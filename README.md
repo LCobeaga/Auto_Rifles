@@ -5,11 +5,6 @@ Auto Rifles
 
 ###### This is a Re-draw of Shadow Price with significant structural and aesthetic improvements that I made over the summer of 2020. It is now to-scale compared to in Destiny and much easier to edit. I plan to make all the other variants of stocks, barrels, and frames seen in the game. Internally, it is still BLDC flywheels and solenoid pusher, but now uses a 16 bit display ammo counter, and includes select fire. It also uses hardware to hold the blaster toghether, unlike the original which was mostly glued together. As a result, most visual components are separate parts, so even without paint the blaster should look very nice, and allows for color swaps if multiple aesthetic components are printed. 
 
-#### NOTES: 
-STLs did not save in correct orientation, but all parts have an obvious optimal print direction. 
-Directories are poorly named, V1 is the version I printed that only works with very thin motors and lacks all optimizations (mostly in wire routing) no reason to print it.
-V2 works for all motors that have a cage designed and includes all optimised wire routings and rigidity changes.
-
 ### HARDWARE
 #### MECHANICAL
 - Six 5mm x 400mm carbon fiber rods
